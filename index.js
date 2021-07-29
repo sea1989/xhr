@@ -20,9 +20,7 @@ xhr.onload = function () {
         const data = JSON.parse(response);
 
         //отрисовываем в таблицу
-        data.results.forEach(element => {
-            addElement(element)
-        });
+        data.results.forEach(addElement);
 
         //вариант через цикл 
         // for (let i = 0; i < data.results.length; i++) {
@@ -44,9 +42,9 @@ function addElement(data) {
 
     //находим элемент куда будем добавлять
 
-    myElement = document.getElementById("table");
+    tableElement = document.getElementById("table");
 
     // Добавляем только что созданный элемент в дерево DOM
 
-    myElement.append(newTR);
+    tableElement.append(newTR);
 }
